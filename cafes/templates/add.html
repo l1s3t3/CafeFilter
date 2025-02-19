@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+<h2>Lisa uus kohvik</h2>
+    <label>Nimi: <input type="text" name="name" required></label><br><br>
+    <label>Asukoht: <input type="text" name="location" required></label><br><br>
+    <label>Teenusepakkuja: <input type="text" name="service_provider"></label><br><br>
+    <label>Avab (HH:MM): <input type="text" name="time_open" required></label><br><br>
+    <label>Sulgeb (HH:MM): <input type="text" name="time_closed" required></label><br><br>
+    <button type="submit">Salvesta</button>
+</form>
+{% endblock %}

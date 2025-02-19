@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url("taltech.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: black;
+}
+
+h1 {
+    color: #004080;
+    margin-top: 20px;
+}
+
+form {
+    background-color: white;
+    padding: 15px;
+    margin: 15px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #008000;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #006600;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #004080;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+td a {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+td a[href*="edit"] {
+    background-color: #ffa500;
+}
+
+td a[href*="edit"]:hover {
+    background-color: #cc8400;
+}
+
+td a[href*="delete"] {
+    background-color: #e60000;
+}
+
+td a[href*="delete"]:hover {
+    background-color: #cc0000;
+}

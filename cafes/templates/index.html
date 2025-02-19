@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<form method="POST" action="{{ url_for('filter_open') }}">
+<h2 align="center">Otsi avamisaja järgi</h2>
+    <label>Avamisaeg (HH:MM):
+        <input type="text" name="open_time">
+    </label>
+    <button type="submit">Otsi</button>
+</form>
+<br>
+<form method="POST" action="{{ url_for('filter_close') }}">
+<h2 align="center">Otsi sulgemisaja järgi</h2>
+    <label>Sulgemisaeg (HH:MM):
+        <input type="text" name="close_time">
+    </label>
+    <button type="submit">Otsi sulgemisaja järgi</button>
+</form>
+<br>
+<form method="POST" action="{{ url_for('filter_range') }}">
+<h2 align="center">Otsi lahtioleku vahemiku järgi</h2>
+    <label>Alates (HH:MM):
+        <input type="text" name="start_time">
+    </label>
+    <label>Kuni (HH:MM):
+        <input type="text" name="end_time">
+    </label>
+    <button type="submit">Filtreeri vahemik</button>
+</form>
+<br>
+<a href="{{ url_for('add_cafe') }}">Lisa uus kohvik</a>
+
+
+<br>
+
+<table border="1" cellpadding="5" cellspacing="0" align="center">
+    <tr>
+        <th>ID</th>
+        <th>Nimi</th>
+        <th>Asukoht</th>
+        <th>Teenusepakkuja</th>
+        <th>Avab</th>
+        <th>Sulgeb</th>
+        <th>Muuda</th>
+        <th>Kustuta</th>
+    </tr>
+    {% for c in cafes %}
+    <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.location }}</td>
+        <td>{{ c.service_provider }}</td>
+        <td>{{ c.time_open }}</td>
+        <td>{{ c.time_closed }}</td>
+        <td><a href="{{ url_for('edit_cafe', cafe_id=c.id) }}">Muuda</a></td>
+        <td><a href="{{ url_for('delete_cafe', cafe_id=c.id) }}" onclick="return confirm('Oled kindel?');">Kustuta</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
